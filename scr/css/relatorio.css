@@ -1,0 +1,155 @@
+:root {
+    --verde: #10b981;
+    --verde-escuro: #059669;
+    --vermelho: #ef4444;
+    --cinza-claro: #f9fafb;
+    --cinza-escuro: #374151;
+    --branco: #ffffff;
+    --texto: #1f2937;
+}
+
+/* Base layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cinza-claro);
+    color: var(--texto);
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+.header {
+    background-color: var(--verde);
+    color: var(--branco);
+    padding: 2rem 1rem;
+    text-align: center;
+    border-bottom: 4px solid var(--verde-escuro);
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    opacity: 0.85;
+}
+
+.nav-buttons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn-nav {
+    background-color: var(--branco);
+    color: var(--verde);
+    padding: 0.6rem 1rem;
+    border: 2px solid var(--verde);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-nav.logout {
+    border-color: var(--vermelho);
+    color: var(--vermelho);
+}
+
+.btn-nav:hover {
+    background-color: var(--verde);
+    color: var(--branco);
+}
+
+.btn-nav.logout:hover {
+    background-color: var(--vermelho);
+    color: var(--branco);
+}
+
+/* Conteúdo principal */
+.content {
+    flex: 1;
+    padding: 2rem;
+}
+
+/* Resumo */
+.resumo-blocos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.bloco {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--branco);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.bloco-receita h2 {
+    color: var(--verde);
+}
+
+.bloco-despesa h2 {
+    color: var(--vermelho);
+}
+
+.bloco ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.bloco li {
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+    font-size: 0.95rem;
+}
+
+.valor {
+    font-weight: bold;
+}
+
+/* Rodapé */
+.footer {
+    background-color: var(--cinza-escuro);
+    color: var(--branco);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .resumo-blocos {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .btn-nav {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
